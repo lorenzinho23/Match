@@ -21,7 +21,7 @@ if (!checkAuth()) {
 </head>
 
 <body style="text-align: center;">
-    <h1>Inserimento dati riuscito</h1>
+    <h1>Inserimento dati riuscito ora</h1>
     <h2>Caricamento risultati...</h2>
     <h1>Nome:</h1>
     <p id="nome"><?php echo $_SESSION["nome"]; ?></p>
