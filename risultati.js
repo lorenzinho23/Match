@@ -13,10 +13,6 @@ console.log(gusto);
 console.log(capelli);
 console.log(carattere);
 
-function onResponse(response) {
-  return response.json();
-}
-
 /* VERSIONE CON RISULTATI MOSTRATI AL CLICK PULSANTE
 const caricaRisultati = document.querySelector("#carica");
 caricaRisultati.addEventListener("click", verifica);
@@ -61,75 +57,82 @@ window.onload = function surprise() {
   })();
 };*/
 
-function stampa() {
-  const fetch1 =
-    "risultati_preda.php?username=" +
-    username +
-    "&sesso=" +
-    sesso +
-    "&gusto=" +
-    gusto +
-    "&capelli=" +
-    capelli +
-    "&carattere=" +
-    carattere;
-  const fetch2 =
-    "risultati_predatore.php?username=" +
-    username +
-    "&sesso=" +
-    sesso +
-    "&gusto=" +
-    gusto +
-    "&capelli=" +
-    capelli +
-    "&carattere=" +
-    carattere;
+// window.onload = function stampa() {
+const fetch1 =
+  "risultati_preda.php?username=" +
+  username +
+  "&sesso=" +
+  sesso +
+  "&gusto=" +
+  gusto +
+  "&capelli=" +
+  capelli +
+  "&carattere=" +
+  carattere;
+// const fetch2 =
+//   "risultati_predatore.php?username=" +
+//   username +
+//   "&sesso=" +
+//   sesso +
+//   "&gusto=" +
+//   gusto +
+//   "&capelli=" +
+//   capelli +
+//   "&carattere=" +
+//   carattere;
 
-  if (page == "stampa_risultati_preda.php") {
-    fetch(fetch1).then(onResponse).then(onJSONPreda);
-  } else if (page == "stampa_risultati_predatore.php") {
-    fetch(fetch2).then(onResponse).then(onJSONPredatore);
-  }
-}
+// if (page == "stampa_risultati_preda.php") {
+fetch(fetch1).then(onResponse).then(onJSONPreda);
+// }
+// else if (page == "stampa_risultati_predatore.php") {
+//   fetch(fetch2).then(onResponse).then(onJSONPredatore);
+// }
+// };
 
 function onJSONPreda(json) {
   if (json[0].length !== 0) {
-    const risultati = document.querySelector("#risultati");
+    // const risultati = document.querySelector("#risultati");
     console.log(json);
+    sessionStorage.setItem("arrayRisultati", JSON.stringify(json));
 
-    for (let i = 0; i < json.length; i++) {
-      const nomePredatore = document.createElement("h2");
-      nomePredatore.textContent = [i + 1] + "°) Username:" + json[i].Predatore;
-      const numero_tavolo = document.createElement("h2");
-      numero_tavolo.textContent = "Numero tavolo:" + json[i].numero_tavolo;
-      const punti = document.createElement("h3");
-      punti.textContent =
-        "Compatibilità:" + Math.round((json[i].Punti / 2) * 100) + "%";
-      risultati.appendChild(nomePredatore);
-      risultati.appendChild(numero_tavolo);
-      risultati.appendChild(punti);
+    // for (let i = 0; i < json.length; i++) {
+    // sessionStorage.setItem("nomePredatore", json[i].Predatore);
+    // sessionStorage.setItem("numeroTavolo", json[i].numero_tavolo);
+    // sessionStorage.setItem("punti", Math.round((json[i].Punti / 2) * 100));
+    // const nomePredatore = document.createElement("h2");
+    // nomePredatore.textContent = [i + 1] + "°) Username:" + json[i].Predatore;
+    // const numero_tavolo = document.createElement("h2");
+    // numero_tavolo.textContent = "Numero tavolo:" + json[i].numero_tavolo;
+    // const punti = document.createElement("h3");
+    // punti.textContent =
+    //   "Compatibilità:" + Math.round((json[i].Punti / 2) * 100) + "%";
+    // risultati.appendChild(nomePredatore);
+    // risultati.appendChild(numero_tavolo);
+    // risultati.appendChild(punti);
 
-      fetch("aggiornaMatchPredatore.php?username=" + json[i].Predatore);
-    }
-    const eliminaPreda = document.createElement("button");
-    eliminaPreda.textContent = "Logout";
-    risultati.appendChild(eliminaPreda);
-    eliminaPreda.onclick = function () {
-      location.href = "logout.php";
-    };
-  } else {
-    const noResults = document.createElement("h2");
-    noResults.textContent = "Nessuna corrispondenza trovata";
-    risultati.appendChild(noResults);
-    const eliminaPreda = document.createElement("button");
-    eliminaPreda.textContent = "Logout";
-    risultati.appendChild(eliminaPreda);
-    eliminaPreda.onclick = function () {
-      location.href = "logout.php";
-    };
+    // fetch("aggiornaMatchPredatore.php?username=" + json[i].Predatore);
+    // }
+    // const eliminaPreda = document.createElement("button");
+    // eliminaPreda.textContent = "Logout";
+    // risultati.appendChild(eliminaPreda);
+    // eliminaPreda.onclick = function () {
+    //   location.href = "logout.php";
+    // };
   }
+  // else {
+  //   const noResults = document.createElement("h2");
+  //   noResults.textContent = "Nessuna corrispondenza trovata";
+  //   risultati.appendChild(noResults);
+  //   const eliminaPreda = document.createElement("button");
+  //   eliminaPreda.textContent = "Logout";
+  //   risultati.appendChild(eliminaPreda);
+  //   eliminaPreda.onclick = function () {
+  //     location.href = "logout.php";
+  //   };
+  // }
 }
 
+/*
 function onJSONPredatore(json) {
   if (json[0].length !== 0) {
     const risultati = document.querySelector("#risultati");
@@ -166,4 +169,8 @@ function onJSONPredatore(json) {
       location.href = "logoutPredatore.php";
     };
   }
+}*/
+
+function onResponse(response) {
+  return response.json();
 }

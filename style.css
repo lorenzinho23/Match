@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+}

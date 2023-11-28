@@ -18,12 +18,15 @@ if (checkAuth() && isset($_SESSION["tipo"]) && $_SESSION["tipo"] == "preda") {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>HOME - TEST MATCH</title>
+    <link href="style.css" rel="stylesheet">
 </head>
 
-<body style="text-align: center;">
-    <h1>Benvenuto nel TEST MATCH in locale</h1>
-    <a id="preda" href="test_preda.php">Versione preda</a>
-    <a id="predatore" href="test_predatore.php">Versione predatore</a>
+<body>
+    <div class="main">
+        <h1>Benvenuto nel TEST MATCH in locale</h1>
+        <button><a id="preda" href="test_preda.php">Versione preda</a></button>
+        <button><a id="predatore" href="test_predatore.php">Versione predatore</a></button>
+    </div>
 </body>
 
 </html>

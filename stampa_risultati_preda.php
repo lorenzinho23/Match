@@ -15,12 +15,12 @@ if (!checkAuth()) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Predatore - Riuscito</title>
-    <script src="risultati.js" defer></script>
+    <script src="stampa.js" defer></script>
 </head>
 
 <body style="text-align: center;">
-    <h1>Inserimento dati riuscito</h1>
-    <h2>Caricamento risultati...</h2>
+    <h1>Ecco i tuoi risultati</h1>
+    <!-- <h2>Caricamento risultati...</h2> -->
     <div style="display: none;">
         <h1>Nome:</h1>
         <p id="nome"><?php echo $_SESSION["nome"]; ?></p>
