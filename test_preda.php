@@ -63,7 +63,7 @@ if (isset($_POST["username"]) && isset($_POST["sesso"]) && isset($_POST["gusto"]
         <ol>
             <!-- NOME !-->
             <li>
-                <h2>Inserisci il tuo nome:</h2>
+                <h2>Inserisci il tuo nome qui:</h2>
                 <input type="text" name="nome" id="nome" required>
             </li>
             <!-- COGNOME !-->
