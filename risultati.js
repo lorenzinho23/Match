@@ -38,17 +38,26 @@ function onJSONVerifica(json) {
 }
 */
 
+const tipo = document.querySelector("#tipo").textContent;
+
 window.onload = function surprise() {
   (function loop() {
     var now = new Date();
     if (
       // now.getDate() === 12 &&
-      now.getHours() === 11 && // CAMBIARE ORARIO QUAA <----
-      now.getMinutes() === 54 // CAMBIARE ORARIO QUAA <----
+      now.getHours() === 22 && // <---- CAMBIARE ORARIO QUAA <----
+      now.getMinutes() === 53 //  <----- CAMBIARE ORARIO QUAA <----
     ) {
       const pulsanteRisultati = document.createElement("a");
       pulsanteRisultati.textContent = "RISULTATI PRONTI - CLICCA QUI";
-      pulsanteRisultati.setAttribute("href", "stampa_risultati_preda.php");
+      if (tipo == "preda") {
+        pulsanteRisultati.setAttribute("href", "stampa_risultati_preda.php");
+      } else if (tipo == "predatore") {
+        pulsanteRisultati.setAttribute(
+          "href",
+          "stampa_risultati_predatore.php"
+        );
+      }
       body.appendChild(pulsanteRisultati);
     }
     now = new Date(); // allow for time passing

@@ -14,9 +14,14 @@ if (!$id_session = checkAuth()) {
 
     $conn = mysqli_connect($dbconfig['host'], $dbconfig['user'], $dbconfig['password'], $dbconfig['name']);
 
+    $tipo = $_SESSION['tipo'];
     $username = $_SESSION["username"];
 
-    $query = "DELETE FROM prede WHERE username = '$username'";
+    if ($tipo == "preda") {
+        $query = "DELETE FROM prede WHERE username = '$username'";
+    } else if ($tipo == "predatore") {
+        $query = "DELETE FROM predatori WHERE username = '$username'";
+    }
 
     $res = mysqli_query($conn, $query);
 

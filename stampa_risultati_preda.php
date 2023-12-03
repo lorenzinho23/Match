@@ -22,6 +22,8 @@ if (!checkAuth()) {
     <h1>Ecco i tuoi risultati:</h1>
 
     <div style="display: none;">
+        <h1>Tipo:</h1>
+        <p id="tipo"><?php echo $_SESSION["tipo"]; ?></p>
         <h1>Nome:</h1>
         <p id="nome"><?php echo $_SESSION["nome"]; ?></p>
         <h1>Cognome:</h1>
