@@ -38,6 +38,8 @@ function onJSONVerifica(json) {
 }
 */
 
+// VERSIONE CON PULSANTE MOSTRATO ALL'ORA X CHE RIMANDA AI RISULTATI
+
 const tipo = document.querySelector("#tipo").textContent;
 
 window.onload = function surprise() {
@@ -45,8 +47,8 @@ window.onload = function surprise() {
     var now = new Date();
     if (
       // now.getDate() === 12 &&
-      now.getHours() === 22 && // <---- CAMBIARE ORARIO QUAA <----
-      now.getMinutes() === 53 //  <----- CAMBIARE ORARIO QUAA <----
+      now.getHours() === 17 && // <---- CAMBIARE ORARIO QUAA <----
+      now.getMinutes() === 55 //  <----- CAMBIARE ORARIO QUAA <----
     ) {
       const pulsanteRisultati = document.createElement("a");
       pulsanteRisultati.textContent = "RISULTATI PRONTI - CLICCA QUI";

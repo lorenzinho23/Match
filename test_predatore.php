@@ -54,7 +54,7 @@ if (isset($_POST["username"]) && isset($_POST["sesso"]) && isset($_POST["gusto"]
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TEST VERSIONE PREDATORE</title>
-    <script src="script_predatore.js" defer></script>
+    <script src="form.js" defer></script>
 </head>
 
 <body>

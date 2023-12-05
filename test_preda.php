@@ -53,7 +53,7 @@ if (isset($_POST["username"]) && isset($_POST["sesso"]) && isset($_POST["gusto"]
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TEST VERSIONE PREDA</title>
-    <script src="script_preda.js" defer></script>
+    <script src="form.js" defer></script>
 </head>
 
 <body>
