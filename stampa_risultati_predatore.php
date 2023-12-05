@@ -48,6 +48,8 @@ if (!checkAuth()) {
     <div id="risultati">
     </div>
 
+    <button id="aggiorna" style="display: none;">AGGIORNA</button>
+
 </body>
 
 </html>

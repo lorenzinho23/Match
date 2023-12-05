@@ -26,7 +26,7 @@ if (!checkAuth()) {
     <h1>Inserimento dati riuscito</h1>
     <h2>I risultati saranno disponibili a breve...</h2>
 
-    <img src="gif_loading.gif" alt="Loading GIF" width="150px"/>
+    <img src="gif_loading.gif" alt="Loading GIF" width="150px" />
 
     <!-- VERRA' MOSTRATO UN BOTTONE ALL'ORARIO X -->
 
